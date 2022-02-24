@@ -1,0 +1,35 @@
+# Databricks CLI profile. See your C/users/CXXXX/.databricks.cfg file.
+profile: p
+
+# Path to sync (use forward slashes)
+local_root: "C:/Users/C57776/Code/macdx_convoy/"
+
+# Databricks Filesystem (dbfs) root. Files will be written to 'dbfs_root/{C-number}/', where your C-number is inferred from the OS.
+dbfs_root: "/dbfs/FileStore/packages/"
+
+# Whether to sync subdirecties of the local_root as well
+recursive: true
+
+# (regex) patterns for paths to include. See README.md
+patterns:
+  or:
+    - ".py"
+    - ".json"
+    - ".yaml"
+    - ".txt"
+  and:
+    - "etl/spark/common"
+  nor:
+    - ".tmp"
+    - ".vscode"
+    - ".git/"
+    - "pytest_cache"
+    - "_pycache_"
+    - "tests"
+    - "autosync.py"
+    - ".md"
+    - ".html"
+    - "environments"
+    - "spark/etl/dags/marketing_normalized"
+  
+  nand:
