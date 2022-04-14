@@ -3,6 +3,8 @@
 ## Description
 Autosync is a script that watches a folder for file changes and updates the same files on Databricks Filesystem (dbfs).
 
+![](autosync_overview.png)
+
 - First it will copy all files of the targeted folder to dbfs.
 - Whenever a file is created, modified or deleted, it will also create, modify or delete it on dbfs, usually within a couple of seconds.
 
@@ -17,6 +19,18 @@ Autosync is a script that watches a folder for file changes and updates the same
 3. 
 - Open a terminal, navigate to this folder and run autosync.py.
 - Double click autosync.bat to run it directly.
+
+4. In your databricks notebook, add the that are mentioned once the script starts running. This will be in the form of
+```
+# cell 1
+%load_ext autoreload
+%autoreload 2
+```
+```
+# cell 2
+import sys
+sys.path.insert(0, '/dbfs/FileStore/packages/<c_number>/<repository_name>/')
+```
 
 
 
