@@ -3,6 +3,8 @@
 ## Description
 Autosync is a script that watches a folder for file changes and updates the same files on Databricks Filesystem (dbfs).
 
+The script watches your local files for any creation, modification or deletion. For create and modify filesystem events, it creates a call to the databricks CLI to copy overwrite that file to dbfs. If a local file is removed, it calls the remove command in the cli to remove the file from dbfs.
+
 ![](autosync_overview.png)
 
 - First it will copy all files of the targeted folder to dbfs.
