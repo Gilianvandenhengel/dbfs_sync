@@ -57,12 +57,12 @@ patterns:
     - "mortgage"
 ```
 
-Example: sync all files of any type that contain either the word 'mortgage' or 'payments', but only in the 'spark/dags' folder. Ignore files in /tests/* folders.
+Example: sync all files of any type that contain either the word 'package' or 'etl', but only in the 'spark/' folder. Ignore files in /tests/* folders.
 ```
 patterns:
   or: 
-    - "mortgage"
-    - "payments"
+    - "package"
+    - "etl"
   and: 
     - "spark"
   nor:
