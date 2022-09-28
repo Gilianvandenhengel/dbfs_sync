@@ -2,7 +2,7 @@
 profile: p
 
 # Path to sync (use forward slashes)
-local_root: "C:/Users/C57776/Code/macdx_convoy/"
+local_root: "C:/Users/username/path/to/repo"
 
 # Databricks Filesystem (dbfs) root. Files will be written to 'dbfs_root/{C-number}/', where your C-number is inferred from the OS.
 dbfs_root: "/dbfs/FileStore/packages/"
@@ -18,7 +18,7 @@ patterns:
     - ".yaml"
     - ".txt"
   and:
-    - "etl/spark/common"
+    - "package/version/"
   nor:
     - ".tmp"
     - ".vscode"
@@ -29,7 +29,5 @@ patterns:
     - "autosync.py"
     - ".md"
     - ".html"
-    - "environments"
-    - "spark/etl/dags/marketing_normalized"
-  
+    - "environments" 
   nand:
